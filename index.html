@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengelola Keuangan Pribadi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="login-container" class="login-container">
+        <div class="login-form">
+            <h2><i class="fas fa-lock"></i> login dulu ya</h2>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="login()"><i class="fas fa-sign-in-alt"></i> Masuk</button>
+            <p id="login-error" style="color: #ff5555; display: none;">Username atau password salah!</p>
+        </div>
+    </div>
+
+    <div id="main-app" class="main-app">
+        <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        <h1><i class="fas fa-wallet"></i> Pengelola Keuangan Pribadi</h1>
+        <div class="container">
+            <div class="balance"><i class="fas fa-coins"></i> Saldo Total: Rp <span id="balance">0</span></div>
+
+            <div class="initial-balance">
+                <label for="initial-amount"><i class="fas fa-piggy-bank"></i> Saldo Awal (Rp):</label>
+                <input type="number" id="initial-amount" placeholder="Masukkan saldo awal" value="0">
+                <button onclick="updateInitialBalance()"><i class="fas fa-save"></i> Update Saldo Awal</button>
+            </div>
+
+            <form id="transaction-form">
+                <select id="type">
+                    <option value="income"><i class="fas fa-arrow-up"></i> Pemasukan</option>
+                    <option value="expense"><i class="fas fa-arrow-down"></i> Pengeluaran</option>
+                </select>
+                <input type="text" id="description" placeholder="Deskripsi (misal: Gaji, Makanan)" required>
+                <input type="number" id="amount" placeholder="Jumlah (Rp)" required>
+                <button type="submit"><i class="fas fa-plus"></i> Tambah Transaksi</button>
+            </form>
+
+            <ul id="transaction-list" class="transaction-list"></ul>
+        </div>
+        <div class="remember">
+            <Label><input type="checkbox" />Remember me</Label>
+            <a href="#">Forgot Password</a>
+        </div>
+        <button type="submit" class="btnn">Login</button>
+        <dif class="button">
+            <a href="#"> <i class="ri-google-fill">
+
+                </i> Google </a>--<a href="#">
+                <i class="ri-Facebook-fill"></i> Facebook
+            </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
